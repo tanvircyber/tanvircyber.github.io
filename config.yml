@@ -1,0 +1,72 @@
+backend:
+  name: github
+  repo: tanvircyber/tanvircyber.github.io
+  branch: main
+  base_url: https://REPLACE-WITH-YOUR-CLOUDFLARE-URL.pages.dev
+  auth_endpoint: api/auth
+
+# Editorial workflow off = saves commit straight to main and go live on next
+# GitHub Pages build (usually under a minute). Flip to true later if you want
+# a draft/review step before changes go live.
+publish_mode: simple
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio"
+    files:
+      - name: "content"
+        label: "Site Content"
+        file: "content/portfolio.json"
+        fields:
+          - label: "Status line"
+            name: "status"
+            widget: "string"
+            hint: "Shown in the hero terminal boot log, e.g. 'learning, building, shipping'"
+
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{title}} — {{status}}"
+            fields:
+              - label: "Case ID"
+                name: "id"
+                widget: "string"
+                hint: "e.g. case_07.log — just increment the number for new entries"
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                options: ["ACTIVE", "PLANNED", "ARCHIVED"]
+                default: "ACTIVE"
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Description"
+                name: "description"
+                widget: "text"
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                field: { label: "Tag", name: "tag", widget: "string" }
+              - label: "Repo URL"
+                name: "repo"
+                widget: "string"
+
+          - label: "Roadmap"
+            name: "roadmap"
+            widget: "list"
+            summary: "{{title}} — {{status}}"
+            fields:
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                options: ["PLANNED", "IN PROGRESS", "DONE"]
+                default: "PLANNED"
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Description"
+                name: "description"
+                widget: "text"

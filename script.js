@@ -83,6 +83,87 @@
   next();
 })();
 
+/* ---------- load dynamic content (status, projects, roadmap) ---------- */
+(function loadContent() {
+  const caseGrid = document.getElementById('case-grid');
+  const queueList = document.getElementById('queue-list');
+  const statusLine = document.getElementById('status-line');
+
+  function escapeHTML(str) {
+    return String(str).replace(/[&<>]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c];
+    });
+  }
+
+  function statusClass(status) {
+    const s = (status || '').toUpperCase();
+    if (s === 'ACTIVE') return 'status-active';
+    if (s === 'PLANNED') return 'status-planned';
+    if (s === 'IN PROGRESS') return 'status-progress';
+    return 'status-planned';
+  }
+
+  function renderProjects(projects) {
+    if (!caseGrid) return;
+    if (!projects || !projects.length) {
+      caseGrid.innerHTML = '<p class="load-msg">No case files yet.</p>';
+      return;
+    }
+    caseGrid.innerHTML = projects.map(function (p) {
+      const tags = (p.tags || []).map(function (t) {
+        return '<span>' + escapeHTML(t) + '</span>';
+      }).join('');
+      return (
+        '<article class="case-card">' +
+          '<div class="case-card-head">' +
+            '<span class="status ' + statusClass(p.status) + '">' + escapeHTML(p.status || 'ACTIVE') + '</span>' +
+            '<span class="case-id">' + escapeHTML(p.id || '') + '</span>' +
+          '</div>' +
+          '<h3>' + escapeHTML(p.title || '') + '</h3>' +
+          '<p>' + escapeHTML(p.description || '') + '</p>' +
+          '<div class="tags">' + tags + '</div>' +
+          (p.repo ? '<a class="case-link" href="' + escapeHTML(p.repo) + '" target="_blank" rel="noopener">view repo →</a>' : '') +
+        '</article>'
+      );
+    }).join('');
+    caseGrid.removeAttribute('data-loading');
+  }
+
+  function renderRoadmap(roadmap) {
+    if (!queueList) return;
+    if (!roadmap || !roadmap.length) {
+      queueList.innerHTML = '<li class="load-msg-li"><p class="load-msg">Nothing queued right now.</p></li>';
+      return;
+    }
+    queueList.innerHTML = roadmap.map(function (r) {
+      return (
+        '<li>' +
+          '<span class="status ' + statusClass(r.status) + '">' + escapeHTML(r.status || 'PLANNED') + '</span>' +
+          '<div>' +
+            '<h3>' + escapeHTML(r.title || '') + '</h3>' +
+            '<p>' + escapeHTML(r.description || '') + '</p>' +
+          '</div>' +
+        '</li>'
+      );
+    }).join('');
+    queueList.removeAttribute('data-loading');
+  }
+
+  fetch('content/portfolio.json', { cache: 'no-store' })
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      if (statusLine && data.status) {
+        statusLine.textContent = 'status: ' + data.status;
+      }
+      renderProjects(data.projects);
+      renderRoadmap(data.roadmap);
+    })
+    .catch(function () {
+      if (caseGrid) caseGrid.innerHTML = '<p class="load-msg">Couldn\'t load case files. Refresh, or check content/portfolio.json.</p>';
+      if (queueList) queueList.innerHTML = '<li class="load-msg-li"><p class="load-msg">Couldn\'t load roadmap.</p></li>';
+    });
+})();
+
 /* ---------- copy email to clipboard ---------- */
 (function copyEmail() {
   const buttons = document.querySelectorAll('[data-copy-email]');
