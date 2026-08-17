@@ -79,7 +79,7 @@
   ],
   "roadmap": [
     {
-      "status": "IN PROGRESS",
+      "status": "PLANNED",
       "title": "Screen-Time Management System",
       "description": "Credit-bank architecture with Google Family Link automation via Puppeteer."
     },
