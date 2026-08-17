@@ -2,7 +2,7 @@ backend:
   name: github
   repo: tanvircyber/tanvircyber.github.io
   branch: main
-  base_url: https://REPLACE-WITH-YOUR-CLOUDFLARE-URL.pages.dev
+  base_url: https://tanvircyber-oauth-gateway.caelumtanvir.workers.dev
   auth_endpoint: api/auth
 
 # Editorial workflow off = saves commit straight to main and go live on next
