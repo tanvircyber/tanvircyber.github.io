@@ -44,7 +44,7 @@
   ],
   "connect": {
     "email": "tanviralam.cyber@gmail.com",
-    "github": "https://github.com/CyberTanvir"
+    "github": "https://github.com/tanvircyber"
   },
   "projects": [
     {
@@ -52,7 +52,12 @@
       "status": "ACTIVE",
       "title": "Chess AI",
       "description": "Autonomous chess bot — captures the board via computer vision, feeds the position to Stockfish, and plays the calculated move back through simulated input. Handles castling, perspective switching, and variable \"thinking time\" to mimic human play.",
-      "tags": ["Python", "OpenCV", "Stockfish", "PyAutoGUI"],
+      "tags": [
+        "Python",
+        "OpenCV",
+        "Stockfish",
+        "PyAutoGUI"
+      ],
       "repo": "https://github.com/CyberTanvir/Chess-AI"
     },
     {
@@ -60,7 +65,12 @@
       "status": "ACTIVE",
       "title": "Neo Agentic AI",
       "description": "Multi-agent productivity system — separate agents handle email, calendar scheduling, web search, and file/PDF processing, with voice I/O on top and Groq/Mistral routing tasks under the hood.",
-      "tags": ["Python", "Multi-Agent", "Groq", "Mistral"],
+      "tags": [
+        "Python",
+        "Multi-Agent",
+        "Groq",
+        "Mistral"
+      ],
       "repo": "https://github.com/CyberTanvir/Neo-Agentic-AI-"
     },
     {
@@ -68,7 +78,12 @@
       "status": "ACTIVE",
       "title": "Neuro Vira",
       "description": "Voice-first AI assistant built for low-latency, hands-free conversation — VAD-based listening, Whisper.cpp transcription, Gemini for responses, and interruptible TTS via a custom state machine.",
-      "tags": ["Python", "Whisper.cpp", "Gemini", "Piper TTS"],
+      "tags": [
+        "Python",
+        "Whisper.cpp",
+        "Gemini",
+        "Piper TTS"
+      ],
       "repo": "https://github.com/CyberTanvir/Neuro_Vira"
     },
     {
@@ -76,7 +91,11 @@
       "status": "ACTIVE",
       "title": "Botify",
       "description": "Multi-bot framework for Facebook Messenger — runs several bot instances at once from one Node.js engine, with a web admin panel, token-based access control, and hot-reloadable commands.",
-      "tags": ["Node.js", "Messenger API", "Admin Panel"],
+      "tags": [
+        "Node.js",
+        "Messenger API",
+        "Admin Panel"
+      ],
       "repo": "https://github.com/CyberTanvir/metabot-botify-"
     },
     {
@@ -84,7 +103,11 @@
       "status": "ACTIVE",
       "title": "Journal Entry Quiz App",
       "description": "Bilingual (EN/BN) accounting practice app — quiz engine with instant feedback, score tracking, and a full reference term database. Built on Flask with vanilla JS on the front end.",
-      "tags": ["Python", "Flask", "JavaScript"],
+      "tags": [
+        "Python",
+        "Flask",
+        "JavaScript"
+      ],
       "repo": "https://github.com/CyberTanvir/Journal_Web_application"
     },
     {
@@ -92,7 +115,11 @@
       "status": "ACTIVE",
       "title": "HSC Result Fetch",
       "description": "Selenium-based scraper that bulk-fetches HSC results from the Chittagong Board portal — pulls name, roll, GPA, and subject-wise marks across roll ranges, exporting each record to a cleanly named file.",
-      "tags": ["Python", "Selenium", "Web Scraping"],
+      "tags": [
+        "Python",
+        "Selenium",
+        "Web Scraping"
+      ],
       "repo": "https://github.com/CyberTanvir/HSC-result-fetch"
     }
   ],
