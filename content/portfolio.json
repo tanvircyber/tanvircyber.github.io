@@ -58,7 +58,7 @@
         "Stockfish",
         "PyAutoGUI"
       ],
-      "repo": "https://github.com/CyberTanvir/Chess-AI"
+      "repo": "https://github.com/tanvircyber/Chess-AI"
     },
     {
       "id": "case_02.log",
@@ -71,7 +71,7 @@
         "Groq",
         "Mistral"
       ],
-      "repo": "https://github.com/CyberTanvir/Neo-Agentic-AI-"
+      "repo": "https://github.com/tanvircyber/Neo-Agentic-AI-"
     },
     {
       "id": "case_03.log",
@@ -84,7 +84,7 @@
         "Gemini",
         "Piper TTS"
       ],
-      "repo": "https://github.com/CyberTanvir/Neuro_Vira"
+      "repo": "https://github.com/tanvircyber/Neuro_Vira"
     },
     {
       "id": "case_04.log",
@@ -96,7 +96,7 @@
         "Messenger API",
         "Admin Panel"
       ],
-      "repo": "https://github.com/CyberTanvir/metabot-botify-"
+      "repo": "https://github.com/tanvircyber/metabot-botify-"
     },
     {
       "id": "case_05.log",
@@ -108,7 +108,7 @@
         "Flask",
         "JavaScript"
       ],
-      "repo": "https://github.com/CyberTanvir/Journal_Web_application"
+      "repo": "https://github.com/tanvircyber/Journal_Web_application"
     },
     {
       "id": "case_06.log",
@@ -120,7 +120,7 @@
         "Selenium",
         "Web Scraping"
       ],
-      "repo": "https://github.com/CyberTanvir/HSC-result-fetch"
+      "repo": "https://github.com/tanvircyber/HSC-result-fetch"
     }
   ],
   "roadmap": [
