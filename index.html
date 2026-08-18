@@ -58,8 +58,8 @@
       <p class="tagline">Aspiring Penetration Tester <span class="pipe">|</span> Self-Taught Builder</p>
       <p class="hero-desc">Based in Bangladesh. Learning offensive security fundamentals and working toward bug bounty hunting — and directing AI coding workflows to ship tools I've architected myself.</p>
       <div class="hero-actions">
-        <button type="button" class="btn btn-primary" data-copy-email="tanviralam.cyber@gmail.com">$ contact --email</button>
-        <a class="btn btn-ghost" href="https://github.com/tanvircyber" target="_blank" rel="noopener">$ open --github</a>
+        <button type="button" class="btn btn-primary" id="hero-email" data-copy-email="tanviralam.cyber@gmail.com">$ contact --email</button>
+        <a class="btn btn-ghost" href="https://github.com/CyberTanvir" id="hero-github" target="_blank" rel="noopener">$ open --github</a>
       </div>
     </div>
   </section>
@@ -67,7 +67,7 @@
   <section class="section" id="about">
     <h2 class="section-head"><span class="cmd">$ cat</span> about.md</h2>
     <div class="panel">
-      <p>Aspiring penetration tester and self-taught builder based in Bangladesh, currently learning offensive security fundamentals and working toward bug bounty hunting. I turn ideas into working tools — from browser automation to computer vision — directing AI coding workflows to execute on problems I've architected myself.</p>
+      <p id="about-text">Loading…</p>
     </div>
   </section>
 
@@ -80,12 +80,8 @@
       <div class="scan-table-wrap">
         <table class="scan-table">
           <thead><tr><th>MODULE</th><th>STATUS</th><th>DETAIL</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>Python</td>
-              <td><span class="status status-active">ACTIVE</span></td>
-              <td>Primary language — automation, scraping, computer vision tooling</td>
-            </tr>
+          <tbody id="languages-body">
+            <tr><td colspan="3" class="load-msg">Loading…</td></tr>
           </tbody>
         </table>
       </div>
@@ -96,27 +92,8 @@
       <div class="scan-table-wrap">
         <table class="scan-table">
           <thead><tr><th>MODULE</th><th>STATUS</th><th>DETAIL</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>AI &amp; LLMs</td>
-              <td><span class="status status-active">ACTIVE</span></td>
-              <td>Building AI virtual assistants and custom AI agents</td>
-            </tr>
-            <tr>
-              <td>Automation</td>
-              <td><span class="status status-active">ACTIVE</span></td>
-              <td>Workflow automation — n8n, webhooks, CLI scripting, AI coding agents</td>
-            </tr>
-            <tr>
-              <td>Dev approach</td>
-              <td><span class="status status-active">ACTIVE</span></td>
-              <td>AI-assisted development — I architect and direct; the tooling executes</td>
-            </tr>
-            <tr>
-              <td>AI toolchain</td>
-              <td><span class="status status-active">ACTIVE</span></td>
-              <td>Claude for coding &amp; complex tasks, Gemini for research &amp; learning, ChatGPT as needed</td>
-            </tr>
+          <tbody id="ai-automation-body">
+            <tr><td colspan="3" class="load-msg">Loading…</td></tr>
           </tbody>
         </table>
       </div>
@@ -127,17 +104,8 @@
       <div class="scan-table-wrap">
         <table class="scan-table">
           <thead><tr><th>MODULE</th><th>STATUS</th><th>DETAIL</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>Security &amp; pentesting</td>
-              <td><span class="status status-active">ACTIVE</span></td>
-              <td>Ethical hacking fundamentals, network inspection, APK security analysis (TryHackMe)</td>
-            </tr>
-            <tr>
-              <td>Hardware &amp; systems</td>
-              <td><span class="status status-active">ACTIVE</span></td>
-              <td>Custom Android ROM assembly</td>
-            </tr>
+          <tbody id="cyber-hardware-body">
+            <tr><td colspan="3" class="load-msg">Loading…</td></tr>
           </tbody>
         </table>
       </div>
@@ -168,8 +136,8 @@
       <p class="connect-line"><span class="prompt-inline">&gt;</span> establishing channel...</p>
       <p class="connect-line success">&gt; connection established.</p>
       <div class="connect-links">
-        <button type="button" class="connect-copy" data-copy-email="tanviralam.cyber@gmail.com">tanviralam.cyber@gmail.com</button>
-        <a href="https://github.com/tanvircyber" target="_blank" rel="noopener">github.com/tanvircyber</a>
+        <button type="button" class="connect-copy" id="connect-email" data-copy-email="tanviralam.cyber@gmail.com">tanviralam.cyber@gmail.com</button>
+        <a href="https://github.com/CyberTanvir" id="connect-github" target="_blank" rel="noopener">github.com/CyberTanvir</a>
       </div>
     </div>
   </section>

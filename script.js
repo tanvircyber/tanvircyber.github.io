@@ -83,11 +83,19 @@
   next();
 })();
 
-/* ---------- load dynamic content (status, projects, roadmap) ---------- */
+/* ---------- load dynamic content (status, about, tables, projects, roadmap, connect) ---------- */
 (function loadContent() {
   const caseGrid = document.getElementById('case-grid');
   const queueList = document.getElementById('queue-list');
   const statusLine = document.getElementById('status-line');
+  const aboutText = document.getElementById('about-text');
+  const languagesBody = document.getElementById('languages-body');
+  const aiAutomationBody = document.getElementById('ai-automation-body');
+  const cyberHardwareBody = document.getElementById('cyber-hardware-body');
+  const heroEmail = document.getElementById('hero-email');
+  const heroGithub = document.getElementById('hero-github');
+  const connectEmail = document.getElementById('connect-email');
+  const connectGithub = document.getElementById('connect-github');
 
   function escapeHTML(str) {
     return String(str).replace(/[&<>]/g, function (c) {
@@ -101,6 +109,23 @@
     if (s === 'PLANNED') return 'status-planned';
     if (s === 'IN PROGRESS') return 'status-progress';
     return 'status-planned';
+  }
+
+  function renderTable(tbody, rows) {
+    if (!tbody) return;
+    if (!rows || !rows.length) {
+      tbody.innerHTML = '<tr><td colspan="3" class="load-msg">No entries yet.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = rows.map(function (r) {
+      return (
+        '<tr>' +
+          '<td>' + escapeHTML(r.module || '') + '</td>' +
+          '<td><span class="status ' + statusClass(r.status) + '">' + escapeHTML(r.status || 'ACTIVE') + '</span></td>' +
+          '<td>' + escapeHTML(r.detail || '') + '</td>' +
+        '</tr>'
+      );
+    }).join('');
   }
 
   function renderProjects(projects) {
@@ -149,17 +174,43 @@
     queueList.removeAttribute('data-loading');
   }
 
+  function renderConnect(connect) {
+    if (!connect) return;
+    const email = connect.email || '';
+    const github = connect.github || '';
+    const githubLabel = github.replace(/^https?:\/\//, '');
+
+    if (heroEmail && email) heroEmail.setAttribute('data-copy-email', email);
+    if (connectEmail && email) {
+      connectEmail.setAttribute('data-copy-email', email);
+      connectEmail.textContent = email;
+    }
+    if (heroGithub && github) heroGithub.setAttribute('href', github);
+    if (connectGithub && github) {
+      connectGithub.setAttribute('href', github);
+      connectGithub.textContent = githubLabel;
+    }
+  }
+
   fetch('content/portfolio.json', { cache: 'no-store' })
     .then(function (res) { return res.json(); })
     .then(function (data) {
       if (statusLine && data.status) {
         statusLine.textContent = 'status: ' + data.status;
       }
+      if (aboutText && data.about) {
+        aboutText.textContent = data.about;
+      }
+      renderTable(languagesBody, data.languages);
+      renderTable(aiAutomationBody, data.aiAutomation);
+      renderTable(cyberHardwareBody, data.cyberHardware);
+      renderConnect(data.connect);
       renderProjects(data.projects);
       renderRoadmap(data.roadmap);
     })
     .catch(function () {
-      if (caseGrid) caseGrid.innerHTML = '<p class="load-msg">Couldn\'t load case files. Refresh, or check content/portfolio.json.</p>';
+      if (aboutText) aboutText.textContent = 'Couldn\'t load content. Refresh, or check content/portfolio.json.';
+      if (caseGrid) caseGrid.innerHTML = '<p class="load-msg">Couldn\'t load case files.</p>';
       if (queueList) queueList.innerHTML = '<li class="load-msg-li"><p class="load-msg">Couldn\'t load roadmap.</p></li>';
     });
 })();
@@ -170,11 +221,13 @@
   if (!buttons.length) return;
 
   buttons.forEach(function (btn) {
-    const originalText = btn.textContent;
     let resetTimer = null;
 
     btn.addEventListener('click', function () {
+      // Read fresh each click — the address may have been updated dynamically
+      // after page load (via the CMS-driven content fetch).
       const email = btn.getAttribute('data-copy-email');
+      const originalText = btn.textContent;
 
       function showCopied() {
         clearTimeout(resetTimer);

@@ -1,80 +1,99 @@
 {
   "status": "learning, building, shipping",
+  "about": "Aspiring penetration tester and self-taught builder based in Bangladesh, currently learning offensive security fundamentals and working toward bug bounty hunting. I turn ideas into working tools — from browser automation to computer vision — directing AI coding workflows to execute on problems I've architected myself.",
+  "languages": [
+    {
+      "module": "Python",
+      "status": "ACTIVE",
+      "detail": "Primary language — automation, scraping, computer vision tooling"
+    }
+  ],
+  "aiAutomation": [
+    {
+      "module": "AI & LLMs",
+      "status": "ACTIVE",
+      "detail": "Building AI virtual assistants and custom AI agents"
+    },
+    {
+      "module": "Automation",
+      "status": "ACTIVE",
+      "detail": "Workflow automation — n8n, webhooks, CLI scripting, AI coding agents"
+    },
+    {
+      "module": "Dev approach",
+      "status": "ACTIVE",
+      "detail": "AI-assisted development — I architect and direct; the tooling executes"
+    },
+    {
+      "module": "AI toolchain",
+      "status": "ACTIVE",
+      "detail": "Claude for coding & complex tasks, Gemini for research & learning, ChatGPT as needed"
+    }
+  ],
+  "cyberHardware": [
+    {
+      "module": "Security & pentesting",
+      "status": "ACTIVE",
+      "detail": "Ethical hacking fundamentals, network inspection, APK security analysis (TryHackMe)"
+    },
+    {
+      "module": "Hardware & systems",
+      "status": "ACTIVE",
+      "detail": "Custom Android ROM assembly"
+    }
+  ],
+  "connect": {
+    "email": "tanviralam.cyber@gmail.com",
+    "github": "https://github.com/CyberTanvir"
+  },
   "projects": [
     {
       "id": "case_01.log",
       "status": "ACTIVE",
       "title": "Chess AI",
       "description": "Autonomous chess bot — captures the board via computer vision, feeds the position to Stockfish, and plays the calculated move back through simulated input. Handles castling, perspective switching, and variable \"thinking time\" to mimic human play.",
-      "tags": [
-        "Python",
-        "OpenCV",
-        "Stockfish",
-        "PyAutoGUI"
-      ],
-      "repo": "https://github.com/tanvircyber/Chess-AI"
+      "tags": ["Python", "OpenCV", "Stockfish", "PyAutoGUI"],
+      "repo": "https://github.com/CyberTanvir/Chess-AI"
     },
     {
       "id": "case_02.log",
       "status": "ACTIVE",
       "title": "Neo Agentic AI",
       "description": "Multi-agent productivity system — separate agents handle email, calendar scheduling, web search, and file/PDF processing, with voice I/O on top and Groq/Mistral routing tasks under the hood.",
-      "tags": [
-        "Python",
-        "Multi-Agent",
-        "Groq",
-        "Mistral"
-      ],
-      "repo": "https://github.com/tanvircyber/Neo-Agentic-AI-"
+      "tags": ["Python", "Multi-Agent", "Groq", "Mistral"],
+      "repo": "https://github.com/CyberTanvir/Neo-Agentic-AI-"
     },
     {
       "id": "case_03.log",
       "status": "ACTIVE",
       "title": "Neuro Vira",
       "description": "Voice-first AI assistant built for low-latency, hands-free conversation — VAD-based listening, Whisper.cpp transcription, Gemini for responses, and interruptible TTS via a custom state machine.",
-      "tags": [
-        "Python",
-        "Whisper.cpp",
-        "Gemini",
-        "Piper TTS"
-      ],
-      "repo": "https://github.com/tanvircyber/Neuro_Vira"
+      "tags": ["Python", "Whisper.cpp", "Gemini", "Piper TTS"],
+      "repo": "https://github.com/CyberTanvir/Neuro_Vira"
     },
     {
       "id": "case_04.log",
       "status": "ACTIVE",
       "title": "Botify",
       "description": "Multi-bot framework for Facebook Messenger — runs several bot instances at once from one Node.js engine, with a web admin panel, token-based access control, and hot-reloadable commands.",
-      "tags": [
-        "Node.js",
-        "Messenger API",
-        "Admin Panel"
-      ],
-      "repo": "https://github.com/tanvircyber/metabot-botify-"
+      "tags": ["Node.js", "Messenger API", "Admin Panel"],
+      "repo": "https://github.com/CyberTanvir/metabot-botify-"
     },
     {
       "id": "case_05.log",
       "status": "ACTIVE",
       "title": "Journal Entry Quiz App",
       "description": "Bilingual (EN/BN) accounting practice app — quiz engine with instant feedback, score tracking, and a full reference term database. Built on Flask with vanilla JS on the front end.",
-      "tags": [
-        "Python",
-        "Flask",
-        "JavaScript"
-      ],
-      "repo": "https://github.com/tanvircyber/Journal_Web_application"
+      "tags": ["Python", "Flask", "JavaScript"],
+      "repo": "https://github.com/CyberTanvir/Journal_Web_application"
     },
     {
       "id": "case_06.log",
       "status": "ACTIVE",
       "title": "HSC Result Fetch",
       "description": "Selenium-based scraper that bulk-fetches HSC results from the Chittagong Board portal — pulls name, roll, GPA, and subject-wise marks across roll ranges, exporting each record to a cleanly named file.",
-      "tags": [
-        "Python",
-        "Selenium",
-        "Web Scraping"
-      ],
-      "repo": "https://github.com/tanvircyber/HSC-result-fetch"
+      "tags": ["Python", "Selenium", "Web Scraping"],
+      "repo": "https://github.com/CyberTanvir/HSC-result-fetch"
     }
   ],
   "roadmap": [
