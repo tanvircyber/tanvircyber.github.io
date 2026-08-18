@@ -34,7 +34,7 @@
     {
       "module": "Security & pentesting",
       "status": "ACTIVE",
-      "detail": "Ethical hacking fundamentals, network inspection, APK security analysis (TryHackMe)"
+      "detail": "Ethical hacking fundamentals, network inspection, APK security analysis"
     },
     {
       "module": "Hardware & systems",
@@ -141,8 +141,8 @@
     },
     {
       "status": "PLANNED",
-      "title": "Cybersecurity & Application Hardening",
-      "description": "Further exploration of ethical hacking frameworks and application security."
+      "title": "Cybersecurity",
+      "description": "Further exploration of ethical hacking frameworks."
     }
   ]
 }
