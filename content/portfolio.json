@@ -23,11 +23,6 @@
       "module": "Dev approach",
       "status": "ACTIVE",
       "detail": "AI-assisted development — I architect and direct; the tooling executes"
-    },
-    {
-      "module": "AI toolchain",
-      "status": "ACTIVE",
-      "detail": "Claude for coding & complex tasks, Gemini for research & learning, ChatGPT as needed"
     }
   ],
   "cyberHardware": [
